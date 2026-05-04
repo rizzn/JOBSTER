@@ -16,7 +16,7 @@
 
 ## What It Does
 
-JOBSTER searches **10 German job portals** simultaneously for your configured keywords and location, deduplicates the results, and outputs a clean Markdown file with clickable links.
+JOBSTER searches **9 German job portals** simultaneously for your configured keywords and location, deduplicates the results, and outputs a clean Markdown file with clickable links.
 
 ### Supported Portals
 
@@ -27,7 +27,6 @@ JOBSTER searches **10 German job portals** simultaneously for your configured ke
 | XING | Professional network (DACH) |
 | Glassdoor | Job board + reviews |
 | Monster | Job board |
-| Arbeitsagentur | Federal employment agency |
 | Stellenanzeigen.de | Job board |
 | Karriere.de | Job board (Handelsblatt) |
 | Kimeta | Meta search engine |
