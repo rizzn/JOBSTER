@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-German Job Crawler
+JOBSTER
 ==================
-Crawls daily job listings from all major German job portals.
+Crawls daily job listings from all major job portals.
 Keywords can be defined in config.json.
 Output: A Markdown file with clickable links and job titles.
 
 Usage:
-  1. Edit config.json (keywords, optional settings)
-  2. python job_crawler.py
-  3. Results in ./results/jobs_YYYY-MM-DD.md
+	1. Edit config.json (keywords, optional settings)
+	2. python job_crawler.py
+	3. Results in ./results/jobs_YYYY-MM-DD.md
 
 For daily execution: Set up a cronjob
-  crontab -e
-  0 8 * * * cd /path/to/script && python3 job_crawler.py
+	crontab -e
+	0 8 * * * cd /path/to/script && python3 job_crawler.py
 
 Dependencies:
-  pip install requests beautifulsoup4 lxml
+	pip install requests beautifulsoup4 lxml
 """
 
 import json
@@ -35,7 +35,7 @@ try:
 	from bs4 import BeautifulSoup
 except ImportError:
 	print("Missing dependencies. Please install:")
-	print("  pip install requests beautifulsoup4 lxml")
+	print("pip install requests beautifulsoup4 lxml")
 	sys.exit(1)
 
 
@@ -615,7 +615,7 @@ def export_markdown(jobs: list[Job], keywords: list[str], loc_display: str, outp
 def main():
 	print()
 	print("╔══════════════════════════════════════╗")
-	print("║      German Job Crawler              ║")
+	print("║               JOBSTER               ║")
 	print("╚══════════════════════════════════════╝")
 	print()
 

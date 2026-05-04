@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>Crawl daily job listings from all major German job portals with a single command.</strong>
+  <strong>Crawl daily job listings from all major job portals with a single command.</strong>
 </p>
 
 <p align="center">
@@ -16,7 +16,7 @@
 
 ## What It Does
 
-JOBSTER searches **9 German job portals** simultaneously for your configured keywords and location, deduplicates the results, and outputs a clean Markdown file with clickable links.
+JOBSTER searches **9 job portals** simultaneously for your configured keywords and location, deduplicates the results, and outputs a clean Markdown file with clickable links.
 
 ### Supported Portals
 
