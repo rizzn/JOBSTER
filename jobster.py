@@ -296,44 +296,6 @@ def crawl_stepstone(session, keyword, location, cfg) -> list[Job]:
 	return jobs
 
 
-def crawl_arbeitsagentur(session, keyword, location, cfg) -> list[Job]:
-	"""Federal Employment Agency – Job Board (API-based)."""
-	jobs = []
-	radius = _radius_km(cfg)
-	log.info(f"  Arbeitsagentur: '{keyword}' (radius={radius}km)")
-
-	api_url = "https://rest.arbeitsagentur.de/jobboerse/jobsuche-service/pc/v4/jobs"
-	params = {"was": keyword, "wo": location, "umkreis": radius, "size": min(cfg["max_results_per_source"], 50), "page": 1}
-
-	# The API requires a special OAuth token; falling back to web search
-	search_url = f"https://www.arbeitsagentur.de/jobsuche/suche?was={quote_plus(keyword)}&wo={quote_plus(location)}&umkreis={radius}"
-
-	r = safe_get(session, search_url, delay=cfg["request_delay_seconds"])
-	if not r:
-		return jobs
-
-	soup = BeautifulSoup(r.text, "lxml")
-	for card in soup.select("a[href*='jobsuche/jobdetail'], li[class*='result'], div[class*='ergebnis']"):
-		if card.name == "a":
-			href = card.get("href", "")
-			title = card.get_text(strip=True)
-		else:
-			link_el = card.select_one("a[href*='jobdetail']")
-			title_el = card.select_one("h2, h3, .titel, .title")
-			href = link_el.get("href", "") if link_el else ""
-			title = title_el.get_text(strip=True) if title_el else ""
-
-		if title and href:
-			full_url = urljoin("https://www.arbeitsagentur.de", href)
-			jobs.append(Job(title, full_url, "Arbeitsagentur"))
-
-		if len(jobs) >= cfg["max_results_per_source"]:
-			break
-
-	log.info(f"    → {len(jobs)} results")
-	return jobs
-
-
 def crawl_linkedin(session, keyword, location, cfg) -> list[Job]:
 	"""LinkedIn Jobs – public search (no login required)."""
 	jobs = []
