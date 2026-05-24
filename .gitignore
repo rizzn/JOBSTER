@@ -21,7 +21,7 @@ lib/
 lib64/
 
 # Virtual environments
-.agents/
+.agents
 .venv/
 venv/
 env/
