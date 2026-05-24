@@ -1,0 +1,16 @@
+{
+  "keywords": [
+    "Python Developer",
+    "Data Engineer",
+    "DevOps"
+  ],
+  "location": {
+    "country": "Deutschland",
+    "city": "",
+    "radius_km": 50
+  },
+  "results_dir": "./results",
+  "max_results_per_source": 50,
+  "request_delay_seconds": 2,
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}

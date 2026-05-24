@@ -1,6 +1,3 @@
-# Claude Code
-.claude/
-
 # Results output
 results/
 
@@ -48,3 +45,7 @@ desktop.ini
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Project specific configurations & design assets
+config.json
+logo.psd
