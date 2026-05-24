@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="JOBSTER Logo" width="400">
+  <img src="logo.png" alt="JOBSTER Logo" width="100%">
 </p>
 
 <p align="center">
